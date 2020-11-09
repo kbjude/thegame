@@ -21,6 +21,24 @@ module.exports = {
          'file-loader',
        ],
      },
+
+     {
+        test: /\.(mp3|mp4|wav)$/,
+        use: [
+          'file-loader',
+        ],
+      },
+
+     {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+        loader: "babel-loader",
+        options: {
+            presets: ['@babel/preset-env']
+        }
+        }
+    }
     ],
   },
 };
