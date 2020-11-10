@@ -1,14 +1,13 @@
-import _ from 'lodash';
-import './style.css';
+import 'phaser' from './Phaser';
+import config from './Config/config';
+import GameScene from './Scenes/GameScene';
 
-function component() {
-    const element = document.createElement('div');
-  
-    // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
-  
-    return element;
+class Game extends Phaser.Game {
+  constructor() {
+    super(config);
+    this.scene.add('Game', GameScene);
+    this.scene.start('Game');
   }
-  
-  document.body.appendChild(component());
+}
+
+window.game = new Game();
