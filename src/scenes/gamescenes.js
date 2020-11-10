@@ -1,5 +1,5 @@
 
-import 'phaser' from '/Phaser';
+import Phaser from 'phaser';
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
