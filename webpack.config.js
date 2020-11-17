@@ -5,7 +5,6 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
   },
   module: {
     rules: [
@@ -17,7 +16,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif)$/i,
         use: [
           { loader: 'file-loader', options: { name: '[name].[ext]' } }],
       },
