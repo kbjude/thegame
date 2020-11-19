@@ -11,9 +11,12 @@ export default class TitleScene extends Phaser.Scene {
 
   create() {
     // Game
-    this.gameButton = this.add.sprite(400, 350, 'button').setInteractive();
+    this.gameButton = this.add.sprite(200, 530, 'button').setInteractive();
     this.gameButton.scaleX = 1.5;
     this.gameButton.scaleY = 1.5;
+    this.startButton = this.add.sprite(400, 530, 'start').setInteractive();
+    this.startButton.scaleX = 2.5;
+    this.startButton.scaleY = 2.5;
     // this.centerButton(this.gameButton, 1);
 
     //     this.gameText = this.add.text(0, 0, 'Play', { fontSize: '32px', fill: '#fff' });

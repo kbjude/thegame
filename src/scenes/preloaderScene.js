@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import '../style.css';
 import imageone from '../assets/NewGameButton.png';
+import button2 from '../assets/startButton.png';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -79,7 +80,7 @@ export default class PreloaderScene extends Phaser.Scene {
 
     // load assets needed in our game
     this.load.image('button', imageone);
-    this.load.image('start', 'assets/ui/blue_button03.png');
+    this.load.image('start', button2);
     // this.load.image('phaserLogo', 'assets/logo.png');
     // this.load.image('phaserLogo', 'assets/logo.png');
     // this.load.image('box', 'assets/ui/grey_box.png');
