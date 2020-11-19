@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 import '../style.css';
 import imageone from '../assets/NewGameButton.png';
 import button2 from '../assets/startButton.png';
-import logo from '../assets/logo.jpg'
+import logo from '../assets/logo.jpg';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
