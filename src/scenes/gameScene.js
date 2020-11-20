@@ -7,10 +7,10 @@ export default class GameScene extends Phaser.Scene {
 
   preload() {
     // load images
-    this.load.image('fighter', 'assets/fighter.gif');
+    this.load.image('person', 'assets/person.png');
   }
 
   create() {
-    this.add.image(400, 300, 'fighter');
+    this.add.image(400, 300, 'person');
   }
 }
