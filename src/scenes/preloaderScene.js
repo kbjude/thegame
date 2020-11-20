@@ -3,6 +3,8 @@ import '../style.css';
 import imageone from '../assets/NewGameButton.png';
 import button2 from '../assets/startButton.png';
 import logo from '../assets/logo.jpg';
+import fighter from '../assets/fighter.gif';
+import person from '../assets/person.png'
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -12,6 +14,8 @@ export default class PreloaderScene extends Phaser.Scene {
   preload() {
     // add logo image
     this.add.image(400, 200, logo);
+    this.add.image(400, 400, fighter);
+    this.add.image(400, 400, person);
 
     // display progress bar
     const progressBar = this.add.graphics();
