@@ -23,6 +23,10 @@ export default class GameScene extends Phaser.Scene {
       this.player.body.setVelocityX(moveAmt);
     } else if (this.cursors.left.isDown) {
       this.player.body.setVelocityX(-moveAmt);
+    } else if (this.cursors.down.isDown) {
+      this.player.body.setVelocityY(moveAmt);
+    } else {
+      this.player.body.setVelocityY(-moveAmt);
     }
   }
 }
