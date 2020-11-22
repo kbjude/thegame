@@ -8,7 +8,9 @@ export default class GameScene extends Phaser.Scene {
 
   preload() {
     // load images
-
+    // this.load.audio("sndExplode0", "content/sndExplode0.wav");
+    // this.load.audio("sndExplode1", "content/sndExplode1.wav");
+    // this.load.audio("sndLaser", "content/sndLaser.wav");
   }
 
   create() {
@@ -25,7 +27,7 @@ export default class GameScene extends Phaser.Scene {
       this.player.body.setVelocityX(-moveAmt);
     } else if (this.cursors.down.isDown) {
       this.player.body.setVelocityY(moveAmt);
-    } else {
+    } else if (this.cursors.up.isDown) {
       this.player.body.setVelocityY(-moveAmt);
     }
   }
