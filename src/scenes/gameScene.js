@@ -4,9 +4,9 @@ import button2 from '../assets/startButton.png';
 import person from '../assets/person.png';
 
 
-class SceneMain extends Phaser.Scene {
+export default class SceneMain extends Phaser.Scene {
   constructor() {
-    super({ key: 'SceneMain' });
+    super('Game');
   }
 
   preload() {
@@ -28,21 +28,33 @@ class SceneMain extends Phaser.Scene {
   //   });
   //   this.load.image('sprLaserEnemy0', 'content/sprLaserEnemy0.png');
     this.load.image('person', person);
-    this.load.spritesheet('person', '../assets/person.png', {
+    this.load.spritesheet('person', person, {
       frameWidth: 16,
       frameHeight: 16,
     });
     // this.load.audio('sndExplode0', 'content/sndExplode0.wav');
     // this.load.audio('sndExplode1', 'content/sndExplode1.wav');
     // this.load.audio('sndLaser', 'content/sndLaser.wav');
+        // this.load.image('sprBtnPlay', 'content/sprBtnPlay.png');
+    // this.load.image('sprBtnPlayHover', 'content/sprBtnPlayHover.png');
+    // this.load.image('start', button2);
+    // this.load.image('sprBtnRestart', 'content/sprBtnRestart.png');
+    // this.load.image('sprBtnRestartHover', 'content/sprBtnRestartHover.png');
+    // this.load.image('sprBtnRestartDown', 'content/sprBtnRestartDown.png');
+
+    // this.load.audio('sndBtnOver', 'content/sndBtnOver.wav');
+    // this.load.audio('sndBtnDown', 'content/sndBtnDown.wav');
   }
 
   create() {
-    this.player = new Player(
+    this.gameText = this.add.text(0, 0, 'Testing', { fontSize: '32px', fill: '#fff' });
+    this.player = this.physics.add.sprite(200, 200, 'person');
+    this.add.image(200, 200, 'person');
+    this.player = new Entities.Player(
       this,
       this.game.config.width * 0.5,
       this.game.config.height * 0.5,
-      'sprPlayer',
+      'person',
     );
 
     // this.anims.create({
@@ -66,12 +78,12 @@ class SceneMain extends Phaser.Scene {
     //   repeat: 0,
     // });
 
-    this.anims.create({
-      key: 'sprPlayer',
-      frames: this.anims.generateFrameNumbers('sprPlayer'),
-      frameRate: 20,
-      repeat: -1,
-    });
+    // this.anims.create({
+    //   key: 'personanima',
+    //   frames: this.anims.generateFrameNumbers('person'),
+    //   frameRate: 20,
+    //   repeat: -1,
+    // });
 
     // this.sfx = {
     //   explosions: [
@@ -80,16 +92,6 @@ class SceneMain extends Phaser.Scene {
     //   ],
     //   laser: this.sound.add('sndLaser'),
     // };
-
-    // this.load.image('sprBtnPlay', 'content/sprBtnPlay.png');
-    // this.load.image('sprBtnPlayHover', 'content/sprBtnPlayHover.png');
-    this.load.image('start', button2);
-    // this.load.image('sprBtnRestart', 'content/sprBtnRestart.png');
-    // this.load.image('sprBtnRestartHover', 'content/sprBtnRestartHover.png');
-    // this.load.image('sprBtnRestartDown', 'content/sprBtnRestartDown.png');
-
-    // this.load.audio('sndBtnOver', 'content/sndBtnOver.wav');
-    // this.load.audio('sndBtnDown', 'content/sndBtnDown.wav');
 
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);

@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack serve --host 0.0.0.0 --port 7000"
+    "start": "webpack serve --host 0.0.0.0 --port 7000",
+    "dev": "webpack --mode development"
   },
   "repository": {
     "type": "git",
