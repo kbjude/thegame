@@ -6,7 +6,7 @@ import person from '../assets/person.png';
 
 export default class SceneMain extends Phaser.Scene {
   constructor() {
-    super('Game');
+    super({ key: 'Game' });
   }
 
   preload() {
@@ -50,12 +50,12 @@ export default class SceneMain extends Phaser.Scene {
     this.gameText = this.add.text(0, 0, 'Testing', { fontSize: '32px', fill: '#fff' });
     this.player = this.physics.add.sprite(200, 200, 'person');
     this.add.image(200, 200, 'person');
-    this.player = new Entities.Player(
-      this,
-      this.game.config.width * 0.5,
-      this.game.config.height * 0.5,
-      'person',
-    );
+    // this.player = new Player(
+    //   this,
+    //   this.game.config.width * 0.5,
+    //   this.game.config.height * 0.5,
+    //   'person',
+    // );
 
     // this.anims.create({
     //   key: 'sprEnemy0',
