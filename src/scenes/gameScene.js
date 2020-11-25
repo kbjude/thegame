@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import Entities from './entities';
+import Player from './entities';
 import button2 from '../assets/startButton.png';
 import person from '../assets/person.png';
 

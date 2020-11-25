@@ -16,7 +16,7 @@ class Player extends Entity {
   constructor(scene, x, y, key) {
     super(scene, x, y, key, 'Player');
     this.setData('speed', 200);
-    this.play('personanima');
+    this.play('person');
   }
 
   moveUp() {
