@@ -3,7 +3,6 @@ import Player from './entities';
 import button2 from '../assets/startButton.png';
 import person from '../assets/person.png';
 
-
 export default class SceneMain extends Phaser.Scene {
   constructor() {
     super({ key: 'Game' });
@@ -49,13 +48,13 @@ export default class SceneMain extends Phaser.Scene {
   create() {
     this.gameText = this.add.text(0, 0, 'Testing', { fontSize: '32px', fill: '#fff' });
     this.player = this.physics.add.sprite(200, 200, 'person');
-    this.add.image(200, 200, 'person');
-    // this.player = new Player(
-    //   this,
-    //   this.game.config.width * 0.5,
-    //   this.game.config.height * 0.5,
-    //   'person',
-    // );
+
+    this.player = new Player(
+      this,
+      this.game.config.width * 0.5,
+      this.game.config.height * 0.5,
+      'person',
+    );
 
     // this.anims.create({
     //   key: 'sprEnemy0',
