@@ -106,13 +106,13 @@ export default class SceneMain extends Phaser.Scene {
       repeat: -1,
     });
 
-    // this.sfx = {
-    //   explosions: [
-    //     this.sound.add('sndExplode0'),
-    //     this.sound.add('sndExplode1'),
-    //   ],
-    //   laser: this.sound.add('sndLaser'),
-    // };
+    this.sfx = {
+      explosions: [
+        this.sound.add('sndExplode0'),
+        this.sound.add('sndExplode1'),
+      ],
+      laser: this.sound.add('sndLaser'),
+    };
 
     this.keyUp = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Up);
     this.keyDown = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Down);
