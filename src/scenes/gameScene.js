@@ -7,11 +7,10 @@ import sprExplosion2 from '../assets/sprExplosion2.png';
 import sprEnemy0 from '../assets/6B.png';
 import sprEnemy2 from '../assets/7.png';
 import sprEnemy3 from '../assets/8.png';
-import sndExplode0 from '../assets/DeathFlash.flac';
+// import sndExplode0 from '../assets/explosion_somewhere_far.mp3';
 import sndExplode1 from '../assets/3shot.wav';
-...
 import sndLaser from '../assets/explosion_somewhere_far.mp3';
-import sndLaser1 from '../assets/rumble.flac';
+import sndLaser1 from '../assets/rmusic.wav';
 import sprBtnRestart from '../assets/restart-button.svg';
 import sprBtnRestartHover from '../assets/verde.png';
 
@@ -47,7 +46,7 @@ export default class SceneMain extends Phaser.Scene {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.audio('sndExplode0', sndExplode0);
+    this.load.audio('sndExplode0', sndLaser);
     this.load.audio('sndExplode1', sndExplode1);
     this.load.audio('sndLaser', sndLaser);
     this.load.audio('sndLaser1', sndLaser1);
