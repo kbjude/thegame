@@ -2,6 +2,10 @@ import Phaser from 'phaser';
 import Player from './entities';
 import button2 from '../assets/startButton.png';
 import person from '../assets/person.png';
+import sprExplosion from '../assets/sprExplosion.png';
+import sprExplosion2 from '../assets/sprExplosion2.png';
+import sprEnemy0 from '../assets/6B.png';
+
 
 export default class SceneMain extends Phaser.Scene {
   constructor() {
@@ -12,15 +16,15 @@ export default class SceneMain extends Phaser.Scene {
   //   this.load.image('sprBg0', 'content/sprBg0.png');
   //   this.load.image('sprBg0', 'content/sprBg0.png');
   //   this.load.image('sprBg1', 'content/sprBg1.png');
-    this.load.spritesheet('sprExplosion', '../assets/sprExplosion.png', {
+    this.load.spritesheet('sprExplosion', sprExplosion, {
       frameWidth: 32,
       frameHeight: 32,
     });
-    this.load.spritesheet('sprExplosion2', '../assets/sprExplosion.png', {
+    this.load.spritesheet('sprExplosion2', sprExplosion2, {
       frameWidth: 32,
       frameHeight: 32,
     });
-    this.load.spritesheet('sprEnemy0', '../assets/6B.png', {
+    this.load.spritesheet('sprEnemy0', sprEnemy0, {
       frameWidth: 16,
       frameHeight: 16,
     });
@@ -29,7 +33,7 @@ export default class SceneMain extends Phaser.Scene {
       frameWidth: 16,
       frameHeight: 16,
     });
-  //   this.load.image('sprLaserEnemy0', 'content/sprLaserEnemy0.png');
+    //   this.load.image('sprLaserEnemy0', 'content/sprLaserEnemy0.png');
     this.load.image('person', person);
     this.load.spritesheet('person', person, {
       frameWidth: 16,
@@ -39,11 +43,11 @@ export default class SceneMain extends Phaser.Scene {
     this.load.audio('sndExplode1', '../assets/3shot.wav');
     this.load.audio('sndLaser', '../assets/explosion_somewhere_far.mp3');
     this.load.audio('sndLaser', '../assets/rumble.flac');
-        // this.load.image('sprBtnPlay', 'content/sprBtnPlay.png');
+    // this.load.image('sprBtnPlay', 'content/sprBtnPlay.png');
     // this.load.image('sprBtnPlayHover', 'content/sprBtnPlayHover.png');
     // this.load.image('start', button2);
-    // this.load.image('sprBtnRestart', '../assets/restart-button.svg');
-    // this.load.image('sprBtnRestartHover', '../assets/verde.png');
+    this.load.image('sprBtnRestart', '../assets/restart-button.svg');
+    this.load.image('sprBtnRestartHover', '../assets/verde.png');
     // // this.load.image('sprBtnRestartDown', 'content/sprBtnRestartDown.png');
 
     // this.load.audio('sndBtnOver', '../assets/Ending.wav');
