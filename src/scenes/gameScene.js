@@ -99,12 +99,12 @@ export default class SceneMain extends Phaser.Scene {
       repeat: 0,
     });
 
-    // this.anims.create({
-    //   key: 'personanima',
-    //   frames: this.anims.generateFrameNumbers('person'),
-    //   frameRate: 20,
-    //   repeat: -1,
-    // });
+    this.anims.create({
+      key: 'personanima',
+      frames: this.anims.generateFrameNumbers('person'),
+      frameRate: 20,
+      repeat: -1,
+    });
 
     // this.sfx = {
     //   explosions: [
