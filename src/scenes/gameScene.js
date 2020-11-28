@@ -11,9 +11,9 @@ import sndExplode0 from '../assets/DeathFlash.flac';
 import sndExplode1 from '../assets/3shot.wav';
 ...
 import sndLaser from '../assets/explosion_somewhere_far.mp3';
-import sprEnemy3 from '../assets/8.png';
-import sndExplode0 from '../assets/explosion_somewhere_far.mp3';
-import sndExplode1 from '../assets/3shot.wav';
+import sndLaser1 from '../assets/rumble.flac';
+import sprBtnRestart from '../assets/restart-button.svg';
+import sprBtnRestartHover from '../assets/verde.png';
 
 export default class SceneMain extends Phaser.Scene {
   constructor() {
@@ -50,12 +50,12 @@ export default class SceneMain extends Phaser.Scene {
     this.load.audio('sndExplode0', sndExplode0);
     this.load.audio('sndExplode1', sndExplode1);
     this.load.audio('sndLaser', sndLaser);
-    this.load.audio('sndLaser', '../assets/rumble.flac');
+    this.load.audio('sndLaser1', sndLaser1);
     // this.load.image('sprBtnPlay', 'content/sprBtnPlay.png');
     // this.load.image('sprBtnPlayHover', 'content/sprBtnPlayHover.png');
     // this.load.image('start', button2);
-    this.load.image('sprBtnRestart', '../assets/restart-button.svg');
-    this.load.image('sprBtnRestartHover', '../assets/verde.png');
+    this.load.image('sprBtnRestart', sprBtnRestart);
+    this.load.image('sprBtnRestartHover', sprBtnRestartHover);
     // // this.load.image('sprBtnRestartDown', 'content/sprBtnRestartDown.png');
 
     // this.load.audio('sndBtnOver', '../assets/Ending.wav');
