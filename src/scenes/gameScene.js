@@ -7,6 +7,13 @@ import sprExplosion2 from '../assets/sprExplosion2.png';
 import sprEnemy0 from '../assets/6B.png';
 import sprEnemy2 from '../assets/7.png';
 import sprEnemy3 from '../assets/8.png';
+import sndExplode0 from '../assets/DeathFlash.flac';
+import sndExplode1 from '../assets/3shot.wav';
+...
+import sprEnemy2 from '../assets/7.png';
+import sprEnemy3 from '../assets/8.png';
+import sndExplode0 from '../assets/DeathFlash.flac';
+import sndExplode1 from '../assets/3shot.wav';
 
 export default class SceneMain extends Phaser.Scene {
   constructor() {
@@ -40,8 +47,8 @@ export default class SceneMain extends Phaser.Scene {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.audio('sndExplode0', '../assets/DeathFlash.flac');
-    this.load.audio('sndExplode1', '../assets/3shot.wav');
+    this.load.audio('sndExplode0', sndExplode0);
+    this.load.audio('sndExplode1', sndExplode1);
     this.load.audio('sndLaser', '../assets/explosion_somewhere_far.mp3');
     this.load.audio('sndLaser', '../assets/rumble.flac');
     // this.load.image('sprBtnPlay', 'content/sprBtnPlay.png');
