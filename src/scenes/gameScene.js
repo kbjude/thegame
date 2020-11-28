@@ -42,12 +42,12 @@ export default class SceneMain extends Phaser.Scene {
         // this.load.image('sprBtnPlay', 'content/sprBtnPlay.png');
     // this.load.image('sprBtnPlayHover', 'content/sprBtnPlayHover.png');
     // this.load.image('start', button2);
-    this.load.image('sprBtnRestart', '../assets/restart-button.svg');
-    this.load.image('sprBtnRestartHover', '../assets/verde.png');
-    // this.load.image('sprBtnRestartDown', 'content/sprBtnRestartDown.png');
+    // this.load.image('sprBtnRestart', '../assets/restart-button.svg');
+    // this.load.image('sprBtnRestartHover', '../assets/verde.png');
+    // // this.load.image('sprBtnRestartDown', 'content/sprBtnRestartDown.png');
 
-    this.load.audio('sndBtnOver', '../assets/Ending.wav');
-    this.load.audio('sndBtnDown', 'content/sndBtnDown.wav');
+    // this.load.audio('sndBtnOver', '../assets/Ending.wav');
+    // this.load.audio('sndBtnDown', 'content/sndBtnDown.wav');
   }
 
   create() {
@@ -60,40 +60,40 @@ export default class SceneMain extends Phaser.Scene {
       'person',
     );
 
-    this.anims.create({
-      key: 'sprEnemy0',
-      frames: this.anims.generateFrameNumbers('sprEnemy0'),
-      frameRate: 20,
-      repeat: -1,
-    });
+    // this.anims.create({
+    //   key: 'sprEnemy0',
+    //   frames: this.anims.generateFrameNumbers('sprEnemy0'),
+    //   frameRate: 20,
+    //   repeat: -1,
+    // });
 
-    this.anims.create({
-      key: 'sprEnemy2',
-      frames: this.anims.generateFrameNumbers('sprEnemy2'),
-      frameRate: 20,
-      repeat: -1,
-    });
+    // this.anims.create({
+    //   key: 'sprEnemy2',
+    //   frames: this.anims.generateFrameNumbers('sprEnemy2'),
+    //   frameRate: 20,
+    //   repeat: -1,
+    // });
 
-    this.anims.create({
-      key: 'sprEnemy3',
-      frames: this.anims.generateFrameNumbers('sprEnemy3'),
-      frameRate: 20,
-      repeat: -1,
-    });
+    // this.anims.create({
+    //   key: 'sprEnemy3',
+    //   frames: this.anims.generateFrameNumbers('sprEnemy3'),
+    //   frameRate: 20,
+    //   repeat: -1,
+    // });
 
-    this.anims.create({
-      key: 'sprExplosion',
-      frames: this.anims.generateFrameNumbers('sprExplosion'),
-      frameRate: 20,
-      repeat: 0,
-    });
+    // this.anims.create({
+    //   key: 'sprExplosion',
+    //   frames: this.anims.generateFrameNumbers('sprExplosion'),
+    //   frameRate: 20,
+    //   repeat: 0,
+    // });
 
-    this.anims.create({
-      key: 'personanima',
-      frames: this.anims.generateFrameNumbers('person'),
-      frameRate: 20,
-      repeat: -1,
-    });
+    // this.anims.create({
+    //   key: 'personanima',
+    //   frames: this.anims.generateFrameNumbers('person'),
+    //   frameRate: 20,
+    //   repeat: -1,
+    // });
 
     // this.sfx = {
     //   explosions: [
