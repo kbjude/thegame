@@ -85,12 +85,12 @@ export default class SceneMain extends Phaser.Scene {
       repeat: -1,
     });
 
-    // this.anims.create({
-    //   key: 'sprEnemy3',
-    //   frames: this.anims.generateFrameNumbers('sprEnemy3'),
-    //   frameRate: 20,
-    //   repeat: -1,
-    // });
+    this.anims.create({
+      key: 'sprEnemy3',
+      frames: this.anims.generateFrameNumbers('sprEnemy3'),
+      frameRate: 20,
+      repeat: -1,
+    });
 
     // this.anims.create({
     //   key: 'sprExplosion',
