@@ -13,6 +13,7 @@ import sndLaser from '../assets/explosion_somewhere_far.mp3';
 import sndLaser1 from '../assets/rmusic.wav';
 import sprBtnRestart from '../assets/restart-button.svg';
 import sprBtnRestartHover from '../assets/verde.png';
+import laser from '../assets/laser.png';
 
 
 export default class SceneMain extends Phaser.Scene {
@@ -41,7 +42,12 @@ export default class SceneMain extends Phaser.Scene {
       frameWidth: 16,
       frameHeight: 16,
     });
-    //   this.load.image('sprLaserEnemy0', 'content/sprLaserEnemy0.png');
+    this.load.image('sprLaserEnemy0', laser);
+    this.load.image('sprLaserPlayer', laser);
+    this.load.spritesheet('sprPlayer', laser, {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
     this.load.image('person', person);
     this.load.spritesheet('person', person, {
       frameWidth: 16,
