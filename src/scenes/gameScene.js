@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import Player from './entities';
+import Player, { ChaserShip, CarrierShip, GunShip } from './entities';
 import button2 from '../assets/startButton.png';
 import person from '../assets/person.png';
 import sprExplosion from '../assets/sprExplosion.png';
@@ -13,6 +13,7 @@ import sndLaser from '../assets/explosion_somewhere_far.mp3';
 import sndLaser1 from '../assets/rmusic.wav';
 import sprBtnRestart from '../assets/restart-button.svg';
 import sprBtnRestartHover from '../assets/verde.png';
+
 
 export default class SceneMain extends Phaser.Scene {
   constructor() {
@@ -119,6 +120,24 @@ export default class SceneMain extends Phaser.Scene {
     this.keyLeft = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Left);
     this.keyRight = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Right);
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
+    this.enemies = this.add.group();
+    this.enemyLasers = this.add.group();
+    this.playerLasers = this.add.group();
+
+    this.time.addEvent({
+      delay: 100,
+      callback() {
+        const enemy = new GunShip(
+          this,
+          Phaser.Math.Between(0, this.game.config.width),
+          0,
+        );
+        this.enemies.add(enemy);
+      },
+      callbackScope: this,
+      loop: true,
+    });
   }
 
   update() {
