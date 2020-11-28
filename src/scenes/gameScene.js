@@ -5,7 +5,8 @@ import person from '../assets/person.png';
 import sprExplosion from '../assets/sprExplosion.png';
 import sprExplosion2 from '../assets/sprExplosion2.png';
 import sprEnemy0 from '../assets/6B.png';
-
+import sprEnemy2 from '../assets/7.png';
+import sprEnemy3 from '../assets/8.png';
 
 export default class SceneMain extends Phaser.Scene {
   constructor() {
@@ -28,8 +29,8 @@ export default class SceneMain extends Phaser.Scene {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.image('sprEnemy2', '../assets/7.png');
-    this.load.spritesheet('sprEnemy3', '../assets/8.png', {
+    this.load.image('sprEnemy2', sprEnemy2);
+    this.load.spritesheet('sprEnemy3', sprEnemy3, {
       frameWidth: 16,
       frameHeight: 16,
     });
