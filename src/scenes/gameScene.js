@@ -53,7 +53,6 @@ export default class SceneMain extends Phaser.Scene {
   create() {
     this.cursors = this.input.keyboard.createCursorKeys();
 
-
     this.player = new Player(
       this,
       this.game.config.width * 0.5,
@@ -89,12 +88,12 @@ export default class SceneMain extends Phaser.Scene {
       repeat: 0,
     });
 
-    // this.anims.create({
-    //   key: 'personanima',
-    //   frames: this.anims.generateFrameNumbers('person'),
-    //   frameRate: 20,
-    //   repeat: -1,
-    // });
+    this.anims.create({
+      key: 'personanima',
+      frames: this.anims.generateFrameNumbers('person'),
+      frameRate: 20,
+      repeat: -1,
+    });
 
     // this.sfx = {
     //   explosions: [
