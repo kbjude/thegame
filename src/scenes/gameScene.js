@@ -12,19 +12,23 @@ export default class SceneMain extends Phaser.Scene {
   //   this.load.image('sprBg0', 'content/sprBg0.png');
   //   this.load.image('sprBg0', 'content/sprBg0.png');
   //   this.load.image('sprBg1', 'content/sprBg1.png');
-  //   this.load.spritesheet('sprExplosion', 'content/sprExplosion.png', {
-  //     frameWidth: 32,
-  //     frameHeight: 32,
-  //   });
-  //   this.load.spritesheet('sprEnemy0', 'content/sprEnemy0.png', {
-  //     frameWidth: 16,
-  //     frameHeight: 16,
-  //   });
-  //   this.load.image('sprEnemy1', 'content/sprEnemy1.png');
-  //   this.load.spritesheet('sprEnemy2', 'content/sprEnemy2.png', {
-  //     frameWidth: 16,
-  //     frameHeight: 16,
-  //   });
+    this.load.spritesheet('sprExplosion', '../assets/sprExplosion.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
+    this.load.spritesheet('sprExplosion2', '../assets/sprExplosion.png', {
+      frameWidth: 32,
+      frameHeight: 32,
+    });
+    this.load.spritesheet('sprEnemy0', '../assets/6B.png', {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+    this.load.image('sprEnemy2', '../assets/7.png');
+    this.load.spritesheet('sprEnemy3', '../assets/8.png', {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
   //   this.load.image('sprLaserEnemy0', 'content/sprLaserEnemy0.png');
     this.load.image('person', person);
     this.load.spritesheet('person', person, {
@@ -46,8 +50,8 @@ export default class SceneMain extends Phaser.Scene {
   }
 
   create() {
-    this.gameText = this.add.text(0, 0, 'Testing', { fontSize: '32px', fill: '#fff' });
-    this.player = this.physics.add.sprite(200, 200, 'person');
+    this.cursors = this.input.keyboard.createCursorKeys();
+
 
     this.player = new Player(
       this,
@@ -56,26 +60,33 @@ export default class SceneMain extends Phaser.Scene {
       'person',
     );
 
-    // this.anims.create({
-    //   key: 'sprEnemy0',
-    //   frames: this.anims.generateFrameNumbers('sprEnemy0'),
-    //   frameRate: 20,
-    //   repeat: -1,
-    // });
+    this.anims.create({
+      key: 'sprEnemy0',
+      frames: this.anims.generateFrameNumbers('sprEnemy0'),
+      frameRate: 20,
+      repeat: -1,
+    });
 
-    // this.anims.create({
-    //   key: 'sprEnemy2',
-    //   frames: this.anims.generateFrameNumbers('sprEnemy2'),
-    //   frameRate: 20,
-    //   repeat: -1,
-    // });
+    this.anims.create({
+      key: 'sprEnemy2',
+      frames: this.anims.generateFrameNumbers('sprEnemy2'),
+      frameRate: 20,
+      repeat: -1,
+    });
 
-    // this.anims.create({
-    //   key: 'sprExplosion',
-    //   frames: this.anims.generateFrameNumbers('sprExplosion'),
-    //   frameRate: 20,
-    //   repeat: 0,
-    // });
+    this.anims.create({
+      key: 'sprEnemy3',
+      frames: this.anims.generateFrameNumbers('sprEnemy3'),
+      frameRate: 20,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'sprExplosion',
+      frames: this.anims.generateFrameNumbers('sprExplosion'),
+      frameRate: 20,
+      repeat: 0,
+    });
 
     // this.anims.create({
     //   key: 'personanima',
@@ -92,25 +103,25 @@ export default class SceneMain extends Phaser.Scene {
     //   laser: this.sound.add('sndLaser'),
     // };
 
-    this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
-    this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
-    this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
-    this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+    this.keyUp = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Up);
+    this.keyDown = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Down);
+    this.keyLeft = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Left);
+    this.keyRight = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Right);
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
   }
 
   update() {
     this.player.update();
 
-    if (this.keyW.isDown) {
+    if (this.cursors.up.isDown) {
       this.player.moveUp();
-    } else if (this.keyS.isDown) {
+    } else if (this.cursors.down.isDown) {
       this.player.moveDown();
     }
 
-    if (this.keyA.isDown) {
+    if (this.cursors.left.isDown) {
       this.player.moveLeft();
-    } else if (this.keyD.isDown) {
+    } else if (this.cursors.right.isDown) {
       this.player.moveRight();
     }
   }
