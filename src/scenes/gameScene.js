@@ -132,7 +132,7 @@ export default class SceneMain extends Phaser.Scene {
     this.playerLasers = this.add.group();
 
     this.time.addEvent({
-      delay: 1000,
+      delay: 900,
       callback() {
         const enemy = new GunShip(
           this,
