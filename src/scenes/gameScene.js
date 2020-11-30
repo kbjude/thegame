@@ -1,7 +1,6 @@
 import Phaser from 'phaser';
 import Player, { ChaserShip, CarrierShip, GunShip } from './entities';
 import button2 from '../assets/startButton.png';
-import person from '../assets/person.png';
 import sprExplosion from '../assets/sprExplosion.png';
 import sprExplosion2 from '../assets/sprExplosion2.png';
 import sprEnemy0 from '../assets/6B.png';
@@ -37,22 +36,22 @@ export default class SceneMain extends Phaser.Scene {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.image('sprEnemy2', sprEnemy2);
-    this.load.spritesheet('sprEnemy3', sprEnemy3, {
-      frameWidth: 16,
-      frameHeight: 16,
-    });
+    // this.load.image('sprEnemy2', sprEnemy2);
+    // this.load.spritesheet('sprEnemy3', sprEnemy3, {
+    //   frameWidth: 16,
+    //   frameHeight: 16,
+    // });
     this.load.image('sprLaserEnemy0', laser);
     this.load.image('sprLaserPlayer', laser);
     this.load.spritesheet('sprPlayer', laser, {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.image('person', person);
-    this.load.spritesheet('person', person, {
-      frameWidth: 16,
-      frameHeight: 16,
-    });
+    // this.load.image('person', person);
+    // this.load.spritesheet('person', person, {
+    //   frameWidth: 16,
+    //   frameHeight: 16,
+    // });
     this.load.audio('sndExplode0', sndLaser);
     this.load.audio('sndExplode1', sndExplode1);
     this.load.audio('sndLaser', sndLaser);
