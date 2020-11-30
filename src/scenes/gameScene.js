@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
-import Player, { ChaserShip, CarrierShip, GunShip } from './entities';
+import Player, { ChaserShip, GunShip } from './entities';
+import CarrierShip from './entities';
 import button2 from '../assets/startButton.png';
 import sprExplosion from '../assets/sprExplosion.png';
 import sprExplosion2 from '../assets/sprExplosion2.png';
@@ -153,14 +154,13 @@ export default class SceneMain extends Phaser.Scene {
               0,
             );
           }
-        } 
-        // else {
-        //   enemy = new CarrierShip(
-        //     this,
-        //     Phaser.Math.Between(0, this.game.config.width),
-        //     0,
-        //   );
-        // }
+        } else {
+          enemy = new CarrierShip(
+            this,
+            Phaser.Math.Between(0, this.game.config.width),
+            0,
+          );
+        }
 
         if (enemy !== null) {
           enemy.setScale(Phaser.Math.Between(10, 20) * 0.1);
