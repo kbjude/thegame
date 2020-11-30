@@ -106,12 +106,12 @@ export default class SceneMain extends Phaser.Scene {
       repeat: 0,
     });
 
-    this.anims.create({
-      key: 'personanima',
-      frames: this.anims.generateFrameNumbers('person'),
-      frameRate: 20,
-      repeat: -1,
-    });
+    // this.anims.create({
+    //   key: 'personanima',
+    //   frames: this.anims.generateFrameNumbers('person'),
+    //   frameRate: 20,
+    //   repeat: -1,
+    // });
 
     this.sfx = {
       explosions: [
@@ -126,13 +126,19 @@ export default class SceneMain extends Phaser.Scene {
     this.keyLeft = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Left);
     this.keyRight = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Right);
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+    if (this.keySpace.isDown) {
+      this.player.setData('isShooting', true);
+    } else {
+      this.player.setData('timerShootTick', this.player.getData('timerShootDelay') - 1);
+      this.player.setData('isShooting', false);
+    }
 
     this.enemies = this.add.group();
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
 
     this.time.addEvent({
-      delay: 900,
+      delay: 100,
       callback() {
         let enemy = null;
 
@@ -150,13 +156,14 @@ export default class SceneMain extends Phaser.Scene {
               0,
             );
           }
-        } else {
-          enemy = new CarrierShip(
-            this,
-            Phaser.Math.Between(0, this.game.config.width),
-            0,
-          );
-        }
+        } 
+        // else {
+        //   enemy = new CarrierShip(
+        //     this,
+        //     Phaser.Math.Between(0, this.game.config.width),
+        //     0,
+        //   );
+        // }
 
         if (enemy !== null) {
           enemy.setScale(Phaser.Math.Between(10, 20) * 0.1);
@@ -168,7 +175,7 @@ export default class SceneMain extends Phaser.Scene {
     });
   }
 
-  
+
   update() {
     this.player.update();
 
@@ -188,6 +195,19 @@ export default class SceneMain extends Phaser.Scene {
       const enemy = this.enemies.getChildren()[i];
 
       enemy.update();
+
+      if (enemy.x < -enemy.displayWidth
+        || enemy.x > this.game.config.width + enemy.displayWidth
+        || enemy.y < -enemy.displayHeight * 4
+        || enemy.y > this.game.config.height + enemy.displayHeight) {
+        if (enemy) {
+          if (enemy.onDestroy !== undefined) {
+            enemy.onDestroy();
+          }
+
+          enemy.destroy();
+        }
+      }
     }
   }
 

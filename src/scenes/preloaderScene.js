@@ -6,6 +6,8 @@ import logo from '../assets/logo.jpg';
 import fighter from '../assets/fighter.gif';
 import person from '../assets/person.png';
 import bullet from '../assets/bullet.jpg';
+import sprEnemy2 from '../assets/7.png';
+import sprEnemy3 from '../assets/8.png';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -96,6 +98,8 @@ export default class PreloaderScene extends Phaser.Scene {
     // this.load.image('box', 'assets/ui/grey_box.png');
     // this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
     // this.load.audio('bgMusic', ['assets/TownTheme.mp3']);
+    this.load.image('sprEnemy2', sprEnemy2);
+    this.load.image('sprEnemy3', sprEnemy3);
   }
 
   create() {

@@ -1,6 +1,7 @@
 // eslint-disable-next-line max-classes-per-file
 import Phaser from 'phaser';
 
+
 class Entity extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, key, type) {
     super(scene, x, y, key);
@@ -73,7 +74,7 @@ class EnemyLaser extends Entity {
 
 class ChaserShip extends Entity {
   constructor(scene, x, y) {
-    super(scene, x, y, 'sprEnemy1', 'ChaserShip');
+    super(scene, x, y, 'sprEnemy2', 'ChaserShip');
     this.body.velocity.y = Phaser.Math.Between(50, 100);
     this.states = {
       MOVE_DOWN: 'MOVE_DOWN',
@@ -104,11 +105,11 @@ class ChaserShip extends Entity {
           Math.cos(angle) * speed,
           Math.sin(angle) * speed,
         );
-        if (this.x < this.scene.player.x) {
-          this.angle -= 5;
-        } else {
-          this.angle += 5;
-        }
+        // if (this.x < this.scene.player.x) {
+        //   this.angle -= 5;
+        // } else {
+        //   this.angle += 5;
+        // }
       }
     }
   }
@@ -146,9 +147,9 @@ class GunShip extends Entity {
 
 class CarrierShip extends Entity {
   constructor(scene, x, y) {
-    super(scene, x, y, 'sprEnemy2', 'CarrierShip');
+    super(scene, x, y, 'sprEnemy3', 'CarrierShip');
     this.body.velocity.y = Phaser.Math.Between(50, 100);
-    this.play('sprEnemy2');
+    this.play('sprEnemy3');
   }
 }
 
