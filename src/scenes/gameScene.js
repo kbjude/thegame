@@ -4,8 +4,6 @@ import button2 from '../assets/startButton.png';
 import sprExplosion from '../assets/sprExplosion.png';
 import sprExplosion2 from '../assets/sprExplosion2.png';
 import sprEnemy0 from '../assets/6B.png';
-import sprEnemy2 from '../assets/7.png';
-import sprEnemy3 from '../assets/8.png';
 // import sndExplode0 from '../assets/explosion_somewhere_far.mp3';
 import sndExplode1 from '../assets/3shot.wav';
 import sndLaser from '../assets/explosion_somewhere_far.mp3';
@@ -105,12 +103,12 @@ export default class SceneMain extends Phaser.Scene {
       repeat: 0,
     });
 
-    // this.anims.create({
-    //   key: 'personanima',
-    //   frames: this.anims.generateFrameNumbers('person'),
-    //   frameRate: 20,
-    //   repeat: -1,
-    // });
+    this.anims.create({
+      key: 'personanima',
+      frames: this.anims.generateFrameNumbers('person'),
+      frameRate: 20,
+      repeat: -1,
+    });
 
     this.sfx = {
       explosions: [
@@ -155,7 +153,7 @@ export default class SceneMain extends Phaser.Scene {
               0,
             );
           }
-        } 
+        }
         // else {
         //   enemy = new CarrierShip(
         //     this,
