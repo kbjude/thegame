@@ -105,11 +105,11 @@ class ChaserShip extends Entity {
           Math.cos(angle) * speed,
           Math.sin(angle) * speed,
         );
-        // if (this.x < this.scene.player.x) {
-        //   this.angle -= 5;
-        // } else {
-        //   this.angle += 5;
-        // }
+        if (this.x < this.scene.player.x) {
+          this.angle -= 5;
+        } else {
+          this.angle += 5;
+        }
       }
     }
   }
