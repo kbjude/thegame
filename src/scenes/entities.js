@@ -15,19 +15,23 @@ class Entity extends Phaser.GameObjects.Sprite {
 
 class PlayerLaser extends Entity {
   constructor(scene, x, y) {
-    super(scene, x, y, 'bullet');
+    super(scene, x, y, 'sprLaserPlayer');
     this.body.velocity.y = -200;
   }
-  for (var i = 0; i < this.enemyLasers.getChildren().length; i++) {
-    var laser = this.enemyLasers.getChildren()[i];
-    laser.update();
 
-    if (laser.x < -laser.displayWidth ||
-      laser.x > this.game.config.width + laser.displayWidth ||
-      laser.y < -laser.displayHeight * 4 ||
-      laser.y > this.game.config.height + laser.displayHeight) {
-      if (laser) {
-        laser.destroy();
+  update() {
+    this.update();
+    for (let i = 0; i < this.playerLasers.getChildren().length; i++) {
+      const laser = this.playerLasers.getChildren()[i];
+      laser.update();
+
+      if (laser.x < -laser.displayWidth
+        || laser.x > this.game.config.width + laser.displayWidth
+        || laser.y < -laser.displayHeight * 4
+        || laser.y > this.game.config.height + laser.displayHeight) {
+        if (laser) {
+          laser.destroy();
+        }
       }
     }
   }
@@ -82,6 +86,23 @@ class EnemyLaser extends Entity {
   constructor(scene, x, y) {
     super(scene, x, y, 'sprLaserEnemy0');
     this.body.velocity.y = 200;
+  }
+
+  update() {
+    this.update();
+    for (let i = 0; i < this.enemyLasers.getChildren().length; i++) {
+      const laser = this.enemyLasers.getChildren()[i];
+      laser.update();
+
+      if (laser.x < -laser.displayWidth
+        || laser.x > this.game.config.width + laser.displayWidth
+        || laser.y < -laser.displayHeight * 4
+        || laser.y > this.game.config.height + laser.displayHeight) {
+        if (laser) {
+          laser.destroy();
+        }
+      }
+    }
   }
 }
 
