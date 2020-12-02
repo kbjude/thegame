@@ -13,6 +13,26 @@ class Entity extends Phaser.GameObjects.Sprite {
   }
 }
 
+class PlayerLaser extends Entity {
+  constructor(scene, x, y) {
+    super(scene, x, y, 'bullet');
+    this.body.velocity.y = -200;
+  }
+  for (var i = 0; i < this.enemyLasers.getChildren().length; i++) {
+    var laser = this.enemyLasers.getChildren()[i];
+    laser.update();
+
+    if (laser.x < -laser.displayWidth ||
+      laser.x > this.game.config.width + laser.displayWidth ||
+      laser.y < -laser.displayHeight * 4 ||
+      laser.y > this.game.config.height + laser.displayHeight) {
+      if (laser) {
+        laser.destroy();
+      }
+    }
+  }
+}
+
 export default class Player extends Entity {
   constructor(scene, x, y, key) {
     super(scene, x, y, key, 'Player');
@@ -58,13 +78,6 @@ export default class Player extends Entity {
   }
 }
 
-class PlayerLaser extends Entity {
-  constructor(scene, x, y) {
-    super(scene, x, y, 'sprLaserPlayer');
-    this.body.velocity.y = -200;
-  }
-}
-
 class EnemyLaser extends Entity {
   constructor(scene, x, y) {
     super(scene, x, y, 'sprLaserEnemy0');
@@ -74,7 +87,7 @@ class EnemyLaser extends Entity {
 
 class ChaserShip extends Entity {
   constructor(scene, x, y) {
-    super(scene, x, y, 'sprEnemy2', 'ChaserShip');
+    super(scene, x, y, 'sprEnemy3', 'ChaserShip');
     this.body.velocity.y = Phaser.Math.Between(50, 100);
     this.states = {
       MOVE_DOWN: 'MOVE_DOWN',
@@ -147,9 +160,9 @@ class GunShip extends Entity {
 
 class CarrierShip extends Entity {
   constructor(scene, x, y) {
-    super(scene, x, y, 'sprEnemy3', 'CarrierShip');
+    super(scene, x, y, 'sprEnemy2', 'CarrierShip');
     this.body.velocity.y = Phaser.Math.Between(50, 100);
-    this.play('sprEnemy3');
+    this.play('sprEnemy2');
   }
 }
 

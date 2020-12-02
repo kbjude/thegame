@@ -3,7 +3,6 @@ import '../style.css';
 import imageone from '../assets/NewGameButton.png';
 import button2 from '../assets/startButton.png';
 import logo from '../assets/logo.jpg';
-import fighter from '../assets/fighter.gif';
 import person from '../assets/person.png';
 import bullet from '../assets/bullet.jpg';
 import sprEnemy2 from '../assets/7.png';
@@ -17,7 +16,6 @@ export default class PreloaderScene extends Phaser.Scene {
   preload() {
     // add logo image
     this.add.image(400, 200, logo);
-    this.add.image(400, 400, fighter);
     // this.add.image(400, 400, person);
     this.add.image(400, 400, bullet);
     this.add.image(2, 2, sprEnemy2);
@@ -93,7 +91,6 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('button', imageone);
     this.load.image('start', button2);
     this.load.image('logo', logo);
-    this.load.image('fighter', fighter);
     this.load.spritesheet('person', person, { frameWidth: 100, frameHeight: 100 });
     this.load.image('bullet', bullet);
     // this.load.image('phaserLogo', 'assets/logo.png');
