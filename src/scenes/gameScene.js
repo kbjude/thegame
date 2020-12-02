@@ -251,6 +251,10 @@ export default class SceneMain extends Phaser.Scene {
           enemy.destroy();
         }
       }
+
+      for (let i = 0; i < this.backgrounds.length; i++) {
+        this.backgrounds[i].update();
+      }
     }
   }
 
