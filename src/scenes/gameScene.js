@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import Player, { ChaserShip, GunShip } from './entities';
 import CarrierShip from './entities';
+import ScrollingBackground from './entities'
 import button2 from '../assets/startButton.png';
 import sprExplosion from '../assets/sprExplosion.png';
 import sprExplosion2 from '../assets/sprExplosion2.png';
@@ -69,6 +70,12 @@ export default class SceneMain extends Phaser.Scene {
   create() {
     this.cursors = this.input.keyboard.createCursorKeys();
 
+    this.backgrounds = [];
+    for (let i = 0; i < 5; i++) { // create five scrolling backgrounds
+      const bg = new ScrollingBackground(this, 'sprBg0', i * 10);
+      this.backgrounds.push(bg);
+    }
+
     this.player = new Player(
       this,
       this.game.config.width * 0.5,
@@ -110,6 +117,12 @@ export default class SceneMain extends Phaser.Scene {
     //   frameRate: 20,
     //   repeat: -1,
     // });
+
+    this.backgrounds = [];
+    for (let i = 0; i < 5; i++) { // create five scrolling backgrounds
+      const bg = new ScrollingBackground(this, 'sprBg0', i * 10);
+      this.backgrounds.push(bg);
+    }
 
     this.sfx = {
       explosions: [
