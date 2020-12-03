@@ -96,7 +96,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.spritesheet('person', person, { frameWidth: 100, frameHeight: 100 });
     this.load.image('bullet', bullet);
     this.load.audio('sndBtnDown', sndBtnDown);
-    this.load.audio('sndBtnOver', sndBtnDown)
+    this.load.audio('sndBtnOver', sndBtnDown);
     // this.load.image('phaserLogo', 'assets/logo.png');
     // this.load.image('box', 'assets/ui/grey_box.png');
     // this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');

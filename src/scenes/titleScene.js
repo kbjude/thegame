@@ -29,10 +29,11 @@ export default class TitleScene extends Phaser.Scene {
       this.scene.start('Game');
     });
 
-    this.input.on('pointerover', () => {
-      this.btnPlay.setTexture("sprBtnPlayHover"); // set the button texture to sprBtnPlayHover
+    this.input.on('pointerover', (event, gameObjects) => {
+      gameObjects[0].setTexture('button');
       this.sfx.btnOver.play(); // play the button over sound
     }, this);
+
 
     this.input.on('pointerout', (event, gameObjects) => {
       gameObjects[0].setTexture('blueButton1');
