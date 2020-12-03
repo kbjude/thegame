@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import Player, { ChaserShip, GunShip } from './entities';
 import CarrierShip from './entities';
-import ScrollingBackground from './entities'
+import ScrollingBackground from './entities';
 import button2 from '../assets/startButton.png';
 import sprExplosion from '../assets/sprExplosion.png';
 import sprExplosion2 from '../assets/sprExplosion2.png';
@@ -13,6 +13,7 @@ import sndLaser1 from '../assets/rmusic.wav';
 import sprBtnRestart from '../assets/restart-button.svg';
 import sprBtnRestartHover from '../assets/verde.png';
 import laser from '../assets/laser.png';
+import sprBg0 from '../assets/sprBg0.png';
 
 
 export default class SceneMain extends Phaser.Scene {
@@ -28,6 +29,12 @@ export default class SceneMain extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 32,
     });
+
+    this.load.spritesheet('sprBg0', sprBg0, {
+      frameWidth: 52,
+      frameHeight: 52,
+    });
+
     this.load.spritesheet('sprExplosion2', sprExplosion2, {
       frameWidth: 32,
       frameHeight: 32,
@@ -255,6 +262,9 @@ export default class SceneMain extends Phaser.Scene {
       for (let i = 0; i < this.backgrounds.length; i++) {
         this.backgrounds[i].update();
       }
+    }
+    for (let i = 0; i < this.backgrounds.length; i++) {
+      this.backgrounds[i].update();
     }
   }
 
