@@ -29,11 +29,12 @@ export default class SceneMain extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 32,
     });
+    this.load.image('sprBg0', sprBg0);
 
-    this.load.spritesheet('sprBg0', sprBg0, {
-      frameWidth: 52,
-      frameHeight: 52,
-    });
+    // this.load.spritesheet('sprBg0', sprBg0, {
+    //   frameWidth: 52,
+    //   frameHeight: 52,
+    // });
 
     this.load.spritesheet('sprExplosion2', sprExplosion2, {
       frameWidth: 32,
@@ -263,10 +264,6 @@ export default class SceneMain extends Phaser.Scene {
 
           enemy.destroy();
         }
-      }
-
-      for (let i = 0; i < this.backgrounds.length; i++) {
-        this.backgrounds[i].update();
       }
     }
     for (let i = 0; i < this.backgrounds.length; i++) {
