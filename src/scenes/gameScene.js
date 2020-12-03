@@ -139,6 +139,12 @@ export default class SceneMain extends Phaser.Scene {
       laser: this.sound.add('sndLaser'),
     };
 
+    this.backgrounds = [];
+    for (let i = 0; i < 5; i++) { // create five scrolling backgrounds
+      const bg = new ScrollingBackground(this, 'sprBg0', i * 10);
+      this.backgrounds.push(bg);
+    }
+
     this.keyUp = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Up);
     this.keyDown = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Down);
     this.keyLeft = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Left);
