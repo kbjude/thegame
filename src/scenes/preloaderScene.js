@@ -7,6 +7,7 @@ import person from '../assets/person.png';
 import bullet from '../assets/bullet.jpg';
 import sprEnemy2 from '../assets/7.png';
 import sprEnemy3 from '../assets/8.png';
+import sndBtnDown from '../assets/sndBtnDown.wav';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -20,6 +21,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.add.image(400, 400, bullet);
     this.add.image(2, 2, sprEnemy2);
     this.add.image(16, 16, sprEnemy3);
+    
 
     // display progress bar
     const progressBar = this.add.graphics();
@@ -93,6 +95,8 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('logo', logo);
     this.load.spritesheet('person', person, { frameWidth: 100, frameHeight: 100 });
     this.load.image('bullet', bullet);
+    this.load.audio('sndBtnDown', sndBtnDown);
+    this.load.audio('sndBtnOver', sndBtnDown)
     // this.load.image('phaserLogo', 'assets/logo.png');
     // this.load.image('box', 'assets/ui/grey_box.png');
     // this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
