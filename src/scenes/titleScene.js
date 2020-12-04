@@ -12,7 +12,7 @@ export default class TitleScene extends Phaser.Scene {
   create() {
     // Game
     this.sfx = {
-      btnOver: this.sound.add('sndBtnOver'),
+      btnOver: this.sound.add('explosionf'),
       btnDown: this.sound.add('sndBtnDown'),
     };
     this.gameButton = this.add.sprite(400, 300, 'button').setInteractive();

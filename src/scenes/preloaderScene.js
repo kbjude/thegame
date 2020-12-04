@@ -7,7 +7,8 @@ import person from '../assets/person.png';
 import bullet from '../assets/bullet.jpg';
 import sprEnemy2 from '../assets/7.png';
 import sprEnemy3 from '../assets/8.png';
-import sndBtnDown from '../assets/sndBtnDown.wav';
+import sndBtnDown from '../assets/rmusic.wav';
+import explosionSomewhere from '../assets/explosion_somewhere_far.mp3';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -97,6 +98,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('bullet', bullet);
     this.load.audio('sndBtnDown', sndBtnDown);
     this.load.audio('sndBtnOver', sndBtnDown);
+    this.load.audio('explosionf', explosionSomewhere);
     // this.load.image('phaserLogo', 'assets/logo.png');
     // this.load.image('box', 'assets/ui/grey_box.png');
     // this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
