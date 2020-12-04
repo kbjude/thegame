@@ -163,7 +163,7 @@ export default class SceneMain extends Phaser.Scene {
     this.playerLasers = this.add.group();
 
     this.time.addEvent({
-      delay: 100,
+      delay: 1000,
       callback() {
         let enemy = null;
 
@@ -190,7 +190,7 @@ export default class SceneMain extends Phaser.Scene {
         }
 
         if (enemy !== null) {
-          enemy.setScale(Phaser.Math.Between(0.1, 3) * 0.1);
+          enemy.setScale(Phaser.Math.Between(0.1, 10) * 0.1);
           this.enemies.add(enemy);
         }
       },
