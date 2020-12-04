@@ -9,6 +9,7 @@ import sprEnemy2 from '../assets/7.png';
 import sprEnemy3 from '../assets/8.png';
 import sndBtnDown from '../assets/rmusic.wav';
 import explosionSomewhere from '../assets/explosion_somewhere_far.mp3';
+import normal from '../assets/normal_3.png';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -99,6 +100,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio('sndBtnDown', sndBtnDown);
     this.load.audio('sndBtnOver', sndBtnDown);
     this.load.audio('explosionf', explosionSomewhere);
+    this.load.image('secondStart', normal)
     // this.load.image('phaserLogo', 'assets/logo.png');
     // this.load.image('box', 'assets/ui/grey_box.png');
     // this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
