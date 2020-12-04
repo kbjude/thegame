@@ -30,7 +30,7 @@ export default class TitleScene extends Phaser.Scene {
     });
 
     this.input.on('pointerover', (event, gameObjects) => {
-      gameObjects[0].setTexture('button');
+      gameObjects[0].setTexture('start');
       this.sfx.btnOver.play(); // play the button over sound
     }, this);
 
@@ -43,7 +43,7 @@ export default class TitleScene extends Phaser.Scene {
   centerButton(gameObject, offset = 0) {
     Phaser.Display.Align.In.Center(
       gameObject,
-      this.add.zone(config.width / 2, config.height / 2 - offset * 100, config.width, config.height),
+     this.add.zone(config.width / 2, config.height / 2 - offset * 100, config.width, config.height),
     );
   }
 
