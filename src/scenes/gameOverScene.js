@@ -44,12 +44,12 @@ export default class GameOver extends Phaser.Scene {
 
     this.btnRestart.on('pointerdown', function () {
       this.btnRestart.setTexture('restart');
-      this.sfx.btnDown.play();
+      this.scene.start('Game');
     }, this);
 
     this.btnRestart.on('pointerup', function () {
       this.btnRestart.setTexture('restart');
-      this.scene.start('SceneMain');
+      
     }, this);
 
     this.backgrounds = [];
