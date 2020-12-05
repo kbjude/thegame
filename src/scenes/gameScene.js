@@ -151,6 +151,10 @@ export default class SceneMain extends Phaser.Scene {
     this.keyLeft = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Left);
     this.keyRight = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Right);
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+    let score = 0;
+    let scoreText;
+    
+
     if (this.keySpace.isDown) {
       this.player.setData('isShooting', true);
     } else {

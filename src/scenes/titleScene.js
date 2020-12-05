@@ -85,3 +85,11 @@ export default class TitleScene extends Phaser.Scene {
     );
   }
 }
+let playerName = '';
+const inputName = document.getElementById('name');
+const inputbutton = document.getElementById('submit');
+
+inputbutton.addEventListener('click', () => {
+  playerName = inputName.value;
+  console.log(playerName);
+});
