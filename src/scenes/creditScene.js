@@ -7,42 +7,21 @@ export default class CreditsScene extends Phaser.Scene {
   }
 
   create() {
-    this.creditsText = this.add.text(0, 0, 'Credits', { font: '52px pixelFont', fill: '#fff' });
-    this.madeByText = this.add.text(0, 0, 'Created By: Fernando Bahamondes', { font: '48px pixelFont', fill: '#fff' });
-    this.zone = this.add.zone(config.width / 2, config.height / 2, config.width, config.height);
+    this.sndEfect();
+    const credits = 'Credits            Author: Jude Kajura';
+    // this.menuButton = new Button(this, config.midx, config.midy + 170, 'Menu', 'Title');
+    this.creditsText = this.add.text(config.width, config.height / 2, credits, { fontSize: '32px', fill: '#fff' });
+  }
 
-    Phaser.Display.Align.In.Center(
-      this.creditsText,
-      this.zone,
-    );
+  update() {
+    this.creditsText.x -= 4;
+    if (this.creditsText.x < -2000) this.creditsText.x = config.width;
+  }
 
-    Phaser.Display.Align.In.Center(
-      this.madeByText,
-      this.zone,
-    );
-
-    this.madeByText.setY(1000);
-    this.creditsTween = this.tweens.add({
-      targets: this.creditsText,
-      y: -100,
-      ease: 'Power1',
-      duration: 4000,
-      delay: 1000,
-      onComplete: () => {
-        this.destroy();
-      },
-    });
-
-    this.madeByTween = this.tweens.add({
-      targets: this.madeByText,
-      y: -300,
-      ease: 'Power1',
-      duration: 9000,
-      delay: 1000,
-      onComplete: () => {
-        this.madeByTween.destroy();
-        this.scene.start('Title');
-      },
-    });
+  sndEfect() {
+    this.sfx = {
+      life: this.sound.add('sndLife'),
+    };
+    this.sfx.life.play();
   }
 }
