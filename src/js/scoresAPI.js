@@ -5,7 +5,7 @@ const scoresAPI = (() => {
   const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
   const newGameEnd = 'games/';
   const scoresEnd = 'scores/';
-  const id = 'LF1opNHwPBCn678gmmYy/';
+  const id = 'Zl4d7IVkemOTTVg2fUdz/';
 
   const rank = (a, b) => {
     if (a.score > b.score) return -1;
