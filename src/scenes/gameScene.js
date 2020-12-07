@@ -2,7 +2,6 @@ import Phaser from 'phaser';
 import Player, { ChaserShip, GunShip } from './entities';
 import CarrierShip from './entities';
 import ScrollingBackground from './entities';
-import button2 from '../assets/startButton.png';
 import sprExplosion from '../assets/sprExplosion.png';
 import sprExplosion2 from '../assets/sprExplosion2.png';
 import sprEnemy0 from '../assets/6B.png';
@@ -14,7 +13,7 @@ import sprBtnRestart from '../assets/restart-button.svg';
 import sprBtnRestartHover from '../assets/verde.png';
 import laser from '../assets/laser.png';
 import sprBg0 from '../assets/sprBg0.png';
-import scores from '../js/topscores';
+import scores from '../js/topScores';
 
 
 export default class SceneMain extends Phaser.Scene {
