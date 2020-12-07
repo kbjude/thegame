@@ -1,8 +1,8 @@
 import Phaser from 'phaser';
 import config from '../Config/config';
-// import Button from '../Objects/Button';
-import scores from '../js/topscores';
-// import dom from '../js/dom';
+
+import scores from '../js/topScores';
+
 import scoresAPI from '../js/scoresAPI';
 
 export default class ScoresScene extends Phaser.Scene {
@@ -11,9 +11,7 @@ export default class ScoresScene extends Phaser.Scene {
   }
 
   preload() {
-    // dom.hide();
-    // dom.loader();
-    // this.add.image(250, 100, 'logo');
+
   }
 
   create() {

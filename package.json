@@ -24,6 +24,7 @@
   "homepage": "https://github.com/kbjude/thegame#readme",
   "devDependencies": {
     "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "babel-loader": "^8.1.0",
     "css-loader": "^5.0.1",

@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import config from '../config/config';
 import ScrollingBackground from './entities';
+import topScores from '../js/topScores';
 
 export default class TitleScene extends Phaser.Scene {
   constructor() {
@@ -85,11 +86,11 @@ export default class TitleScene extends Phaser.Scene {
     );
   }
 }
-let playerName = '';
+let user = '';
 const inputName = document.getElementById('name');
 const inputbutton = document.getElementById('submit');
 
 inputbutton.addEventListener('click', () => {
-  playerName = inputName.value;
-  console.log(playerName);
+  user = inputName.value;
+  topScores.user.user = user;
 });
