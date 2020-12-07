@@ -14,6 +14,7 @@ import sprBtnRestart from '../assets/restart-button.svg';
 import sprBtnRestartHover from '../assets/verde.png';
 import laser from '../assets/laser.png';
 import sprBg0 from '../assets/sprBg0.png';
+import scores from '../js/topscores';
 
 
 export default class SceneMain extends Phaser.Scene {
@@ -151,9 +152,6 @@ export default class SceneMain extends Phaser.Scene {
     this.keyLeft = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Left);
     this.keyRight = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Right);
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-    let score = 0;
-    let scoreText;
-    
 
     if (this.keySpace.isDown) {
       this.player.setData('isShooting', true);
@@ -165,6 +163,11 @@ export default class SceneMain extends Phaser.Scene {
     this.enemies = this.add.group();
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
+
+    this.levelText = this.add.text(16, 8, `player: ${scores.user.user}`, { fontSize: '16px', fill: '#FFF' });
+    this.levelText = this.add.text(16, 26, 'level: 1', { fontSize: '16px', fill: '#FFF' });
+    this.livesText = this.add.text(16, 44, 'lifes: 3', { fontSize: '16px', fill: '#FFF' });
+    this.scoreText = this.add.text(16, 62, 'score: 0', { fontSize: '16px', fill: '#FFF' });
 
     this.time.addEvent({
       delay: 1000,
@@ -196,6 +199,7 @@ export default class SceneMain extends Phaser.Scene {
         if (enemy !== null) {
           enemy.setScale(Phaser.Math.Between(0.1, 10) * 0.1);
           this.enemies.add(enemy);
+          this.addScore(1);
         }
       },
       callbackScope: this,
@@ -217,6 +221,7 @@ export default class SceneMain extends Phaser.Scene {
           && !enemy.getData('isDead')) {
         player.explode(false);
         enemy.explode(true);
+        this.addScore(10);
         player.onDestroy();
       }
     });
@@ -226,6 +231,7 @@ export default class SceneMain extends Phaser.Scene {
           && !laser.getData('isDead')) {
         player.explode(false);
         laser.destroy();
+        this.addScore(200);
         player.onDestroy();
       }
     });
@@ -275,6 +281,54 @@ export default class SceneMain extends Phaser.Scene {
     for (let i = 0; i < this.backgrounds.length; i++) {
       this.backgrounds[i].update();
     }
+  }
+
+  getScore() {
+    return this.player.getData('score');
+  }
+
+  addScore(value) {
+    if (!this.player.getData('isDead')) {
+      this.player.setData('score', this.getScore() + value);
+      this.scoreText.setText(`score: ${this.player.getData('score')}`);
+      scores.user.score = this.player.getData('score');
+    }
+  }
+
+  getLifes() {
+    return this.player.getData('lifes');
+  }
+
+  addLifes() {
+    this.player.setData('lifes', this.getLifes() + 1);
+    this.livesText.setText(`lifes: ${this.getLifes()}`);
+    this.sfx.life.play();
+    this.player.power();
+  }
+
+  removeLifes() {
+    this.player.setData('lifes', this.getLifes() - 1);
+    if (this.getLifes() >= 0) this.livesText.setText(`lifes: ${this.getLifes()}`);
+  }
+
+  getEnemies() {
+    return this.player.getData('enemies');
+  }
+
+  addEnemies() {
+    this.player.setData('enemies', this.getEnemies() + 1);
+  }
+
+  getLevel() {
+    return this.player.getData('level');
+  }
+
+  levelUp() {
+    this.player.setData('level', this.player.getData('level') + 1);
+    this.levelText.setText(`level: ${this.player.getData('level')}`);
+    this.sfx.level.play();
+    this.player.power();
+    this.addScore(100);
   }
 
   getEnemiesByType(type) {
