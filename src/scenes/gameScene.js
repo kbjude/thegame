@@ -163,6 +163,7 @@ export default class SceneMain extends Phaser.Scene {
     this.enemies = this.add.group();
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
+    this.bonusLifes = this.add.group();
 
     this.levelText = this.add.text(16, 8, `player: ${scores.user.user}`, { fontSize: '16px', fill: '#FFF' });
     this.levelText = this.add.text(16, 26, 'level: 1', { fontSize: '16px', fill: '#FFF' });
@@ -239,6 +240,29 @@ export default class SceneMain extends Phaser.Scene {
 
 
   update() {
+    this.enemies.getChildren().forEach(e => {
+      e.update();
+      if (e && e.y > this.game.config.height - 10) {
+        e.onDestroy();
+        e.destroy();
+      }
+    });
+
+    this.enemyLasers.getChildren().forEach(e => {
+      if (e && e.y > this.game.config.height - 10) e.destroy();
+    });
+
+    this.playerLasers.getChildren().forEach(e => {
+      if (e && e.y < 10) e.destroy();
+    });
+
+    this.bonusLifes.getChildren().forEach(e => {
+      e.update();
+      if (e && e.y > this.game.config.height - 10) {
+        e.destroy();
+      }
+    });
+
     if (!this.player.getData('isDead')) {
       this.player.update();
 
@@ -278,9 +302,11 @@ export default class SceneMain extends Phaser.Scene {
         if (enemy) {
           if (enemy.onDestroy !== undefined) {
             enemy.onDestroy();
+            this.addScore(200);
           }
 
           enemy.destroy();
+          this.addScore(200);
         }
       }
     }
