@@ -1,6 +1,8 @@
 import Phaser from 'phaser';
 
+
 import ScrollingBackground from './entities';
+import scoresAPI from '../js/scoresAPI';
 
 export default class GameOver extends Phaser.Scene {
   constructor() {
@@ -49,7 +51,6 @@ export default class GameOver extends Phaser.Scene {
 
     this.btnRestart.on('pointerup', function () {
       this.btnRestart.setTexture('restart');
-      
     }, this);
 
     this.backgrounds = [];
@@ -59,6 +60,7 @@ export default class GameOver extends Phaser.Scene {
       const bg = new ScrollingBackground(this, key, i * 10);
       this.backgrounds.push(bg);
     }
+
   }
 
   update() {

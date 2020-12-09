@@ -17,7 +17,7 @@ const scoresAPI = (() => {
     try {
       scores.user.user = scores.user.user == null ? 'Unknown' : scores.user.user;
       scores.user.score = scores.user.score === 0 ? 1 : scores.user.score;
-
+      console.log(scores.user);
       const response = await fetch(url + newGameEnd + id + scoresEnd, {
         method: 'POST',
         mode: 'cors',

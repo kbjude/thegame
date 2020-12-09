@@ -14,6 +14,7 @@ import sprBtnRestartHover from '../assets/verde.png';
 import laser from '../assets/laser.png';
 import sprBg0 from '../assets/sprBg0.png';
 import scores from '../js/topScores';
+import scoresAPI from '../js/scoresAPI';
 
 
 export default class SceneMain extends Phaser.Scene {
@@ -159,6 +160,8 @@ export default class SceneMain extends Phaser.Scene {
       this.player.setData('isShooting', false);
     }
 
+    this.player.setData('score', 0);
+
     this.enemies = this.add.group();
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
@@ -285,6 +288,7 @@ export default class SceneMain extends Phaser.Scene {
       }
     } else {
       scores.score = this.getScore();
+      (async () => { await scoresAPI.save(); })();
       this.scene.start('End');
     }
 
@@ -320,8 +324,10 @@ export default class SceneMain extends Phaser.Scene {
 
   addScore(value) {
     if (!this.player.getData('isDead')) {
-      this.player.setData('score', this.getScore() + value);
-      this.scoreText.setText(`score: ${this.player.getData('score')}`);
+      const currentScore = this.getScore();
+      const newScore = currentScore + value;
+      this.player.setData('score', newScore);
+      this.scoreText.setText(`score: ${newScore}`);
       scores.user.score = this.player.getData('score');
     }
   }
