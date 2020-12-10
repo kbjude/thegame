@@ -288,8 +288,8 @@ export default class SceneMain extends Phaser.Scene {
       }
     } else {
       scores.score = this.getScore();
-      (async () => { await scoresAPI.save(); })();
       this.scene.start('End');
+      (async () => { await scoresAPI.save(); })();
     }
 
 
