@@ -1,4 +1,4 @@
-import score from './topscores';
+import score from './topScores';
 
 const dom = (() => {
   const hide = () => {

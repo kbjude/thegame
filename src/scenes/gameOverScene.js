@@ -3,6 +3,7 @@ import Phaser from 'phaser';
 
 import ScrollingBackground from './entities';
 import scoresAPI from '../js/scoresAPI';
+import scores from '../js/topScores';
 
 export default class GameOver extends Phaser.Scene {
   constructor() {
@@ -21,6 +22,20 @@ export default class GameOver extends Phaser.Scene {
       align: 'center',
     });
     this.title.setOrigin(0.5);
+
+    this.userNameText = this.add.text(210, 310, `${scores.user.user}`, { fontSize: '16px', fill: '#FFF' });
+    this.finalScoreText = this.add.text(210, 330, `score: ${scores.user.score}`, { fontSize: '16px', fill: '#FFF' });
+    scoresAPI.gettop()
+      .then(() => {
+        if (scores.user.score > scores.topscores[4].score) {
+          this.add.text(100, 390, 'Congrats, you are in top 4!', { fontSize: '16px', fill: '#FFF' });
+          this.sfx.life.play();
+          scoresAPI.save();
+        } else {
+          this.add.text(90, 390, 'Too low to be saved sorr!!!', { fontSize: '16px', fill: '#FFF' });
+          this.sfx.life.play();
+        }
+      });
 
     this.sfx = {
       btnOver: this.sound.add('explosionf'),
