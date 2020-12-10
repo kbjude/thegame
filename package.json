@@ -5,7 +5,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test":  "jest",
+    "testdev": "jest --watch",
     "build": "webpack",
     "watch": "webpack --watch",
     "start": "webpack serve --host 0.0.0.0 --port 7000",
