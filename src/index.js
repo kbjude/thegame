@@ -8,7 +8,6 @@ import OptionsScene from './scenes/optionsScene';
 import CreditsScene from './scenes/creditScene';
 import GameOver from './scenes/gameOverScene';
 import ScoreScene from './scenes/scoreScene';
-import topScores from './js/topScores';
 
 // import Entity from './scenes/entities';
 
