@@ -18,20 +18,6 @@ global.fetch = jest.fn(() => Promise.resolve({
 }));
 describe('scoresAPI', () => {
   describe('gettop', () => {
-    // fetch.mockResponseOnce(
-    //   JSON.stringify({
-    //     result: [
-    //       { user: 'Player1', score: 1 },
-    //       { user: 'Player2', score: 2 },
-    //       { user: 'Player4', score: 3 },
-    //       { user: 'Player5', score: 7 },
-    //       { user: 'Player7', score: 1 },
-    //       { user: 'Player1', score: 0 },
-    //       { user: 'Player1', score: 0 },
-    //     ],
-    //   }),
-    // );
-
     let response = '';
 
     test('it should retrieve a maximum of 5 results', async () => {
@@ -47,10 +33,6 @@ describe('scoresAPI', () => {
   });
 
   describe('save', () => {
-    // beforeEach(() => {
-    //   fetch.resetMocks();
-    // });
-
     result = 'Creation of the Leaderboard score';
 
     test('it should be unknown with an empty name', async () => {
