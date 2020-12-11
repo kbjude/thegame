@@ -5,7 +5,6 @@ import ScrollingBackground from './entities';
 import sprExplosion from '../assets/sprExplosion.png';
 import sprExplosion2 from '../assets/sprExplosion2.png';
 import sprEnemy0 from '../assets/6B.png';
-// import sndExplode0 from '../assets/explosion_somewhere_far.mp3';
 import sndExplode1 from '../assets/3shot.wav';
 import sndLaser from '../assets/explosion_somewhere_far.mp3';
 import sndLaser1 from '../assets/rmusic.wav';
@@ -23,20 +22,11 @@ export default class SceneMain extends Phaser.Scene {
   }
 
   preload() {
-  //   this.load.image('sprBg0', 'content/sprBg0.png');
-  //   this.load.image('sprBg0', 'content/sprBg0.png');
-  //   this.load.image('sprBg1', 'content/sprBg1.png');
     this.load.spritesheet('sprExplosion', sprExplosion, {
       frameWidth: 32,
       frameHeight: 32,
     });
     this.load.image('sprBg0', sprBg0);
-
-    // this.load.spritesheet('sprBg0', sprBg0, {
-    //   frameWidth: 52,
-    //   frameHeight: 52,
-    // });
-
     this.load.spritesheet('sprExplosion2', sprExplosion2, {
       frameWidth: 32,
       frameHeight: 32,
@@ -45,35 +35,18 @@ export default class SceneMain extends Phaser.Scene {
       frameWidth: 16,
       frameHeight: 16,
     });
-    // this.load.image('sprEnemy2', sprEnemy2);
-    // this.load.spritesheet('sprEnemy3', sprEnemy3, {
-    //   frameWidth: 16,
-    //   frameHeight: 16,
-    // });
     this.load.image('sprLaserEnemy0', laser);
     this.load.image('sprLaserPlayer', laser);
     this.load.spritesheet('sprPlayer', laser, {
       frameWidth: 16,
       frameHeight: 16,
     });
-    // this.load.image('person', person);
-    // this.load.spritesheet('person', person, {
-    //   frameWidth: 16,
-    //   frameHeight: 16,
-    // });
     this.load.audio('sndExplode0', sndLaser);
     this.load.audio('sndExplode1', sndExplode1);
     this.load.audio('sndLaser', sndLaser);
     this.load.audio('sndLaser1', sndLaser1);
-    // this.load.image('sprBtnPlay', 'content/sprBtnPlay.png');
-    // this.load.image('sprBtnPlayHover', 'content/sprBtnPlayHover.png');
-    // this.load.image('start', button2);
     this.load.image('sprBtnRestart', sprBtnRestart);
     this.load.image('sprBtnRestartHover', sprBtnRestartHover);
-    // // this.load.image('sprBtnRestartDown', 'content/sprBtnRestartDown.png');
-
-    // this.load.audio('sndBtnOver', '../assets/Ending.wav');
-    // this.load.audio('sndBtnDown', 'content/sndBtnDown.wav');
   }
 
   create() {
@@ -119,13 +92,6 @@ export default class SceneMain extends Phaser.Scene {
       frameRate: 20,
       repeat: 0,
     });
-
-    // this.anims.create({
-    //   key: 'personanima',
-    //   frames: this.anims.generateFrameNumbers('person'),
-    //   frameRate: 20,
-    //   repeat: -1,
-    // });
 
     this.backgrounds = [];
     for (let i = 0; i < 5; i++) { // create five scrolling backgrounds
