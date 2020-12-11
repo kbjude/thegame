@@ -1,5 +1,5 @@
-import scores from '../js/topScores';
-import scoresAPI from '../js/scoresAPI';
+import scores from '../scenes/topScores';
+import scoresAPI from '../scenes/scoresAPI';
 
 let result = [
   { user: 'Player1', score: 1 },

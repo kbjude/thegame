@@ -4,7 +4,7 @@ import Phaser from 'phaser';
 import config from '../config/config';
 // eslint-disable-next-line import/no-named-as-default
 import ScrollingBackground from './entities';
-import topScores from '../js/topScores';
+import topScores from './topScores';
 
 export default class TitleScene extends Phaser.Scene {
   constructor() {
