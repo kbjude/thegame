@@ -1,5 +1,5 @@
-import scoresAPI from '../js/scoresAPI';
 import scores from '../js/topscores';
+import scoresAPI from '../js/scoresAPI';
 
 
 describe('scoresAPI', () => {

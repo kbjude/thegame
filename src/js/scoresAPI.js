@@ -1,5 +1,5 @@
 
-import scores from './topScores';
+import scores from './topscores';
 
 const scoresAPI = (() => {
   const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
