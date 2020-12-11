@@ -56,6 +56,9 @@ This is a game built using Javascript, it has a player and the player's ability 
 - CSS
 - Phaser
 
+#### Live Version 
+   - [ Netlify Live Link](https://jude-restaurant.netlify.app/)
+
 ### Contributors
 
 👤 **Jude Kajura**
