@@ -66,13 +66,12 @@ export default class GameOver extends Phaser.Scene {
     this.finalScoreText = this.add.text(210, 330, `score: ${scores.user.score}`, { fontSize: '16px', fill: '#FFF' });
     scoresAPI.gettop()
       .then(() => {
-        if (scores.user.score > scores.topscores[4].score) {
+        if (scores.user.score >= scores.topscores[4].score) {
           this.add.text(100, 390, 'Congrats, you are in top 4!', { fontSize: '16px', fill: '#FFF' });
           this.sfx.life.play();
           scoresAPI.save();
         } else {
           this.add.text(90, 390, 'Too low to be saved sorry!!!', { fontSize: '16px', fill: '#FFF' });
-          
         }
       });
   }

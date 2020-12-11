@@ -245,7 +245,9 @@ export default class SceneMain extends Phaser.Scene {
     this.enemies.getChildren().forEach(e => {
       e.update();
       if (e && e.y > this.game.config.height - 10) {
-        e.onDestroy();
+        if (!(e instanceof ChaserShip)) {
+          e.onDestroy();
+        }
         e.destroy();
       }
     });
@@ -287,7 +289,7 @@ export default class SceneMain extends Phaser.Scene {
         this.player.setData('isShooting', false);
       }
     } else {
-      scores.score = this.getScore();
+      scores.user.score = this.getScore();
       this.scene.start('End');
       (async () => { await scoresAPI.save(); })();
     }
