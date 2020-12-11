@@ -5,8 +5,8 @@ import Phaser from 'phaser';
 
 // eslint-disable-next-line import/no-named-as-default
 import ScrollingBackground from './entities';
-import scoresAPI from '../js/scoresAPI';
-import scores from '../js/topScores';
+import scoresAPI from './scoresAPI';
+import scores from './topScores';
 
 export default class GameOver extends Phaser.Scene {
   constructor() {

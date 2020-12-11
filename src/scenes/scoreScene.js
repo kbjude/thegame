@@ -1,9 +1,9 @@
 /* eslint-disable class-methods-use-this */
 import Phaser from 'phaser';
 
-import scores from '../js/topScores';
+import scores from './topScores';
 
-import scoresAPI from '../js/scoresAPI';
+import scoresAPI from './scoresAPI';
 
 export default class ScoresScene extends Phaser.Scene {
   constructor() {

@@ -16,8 +16,8 @@ import sprBtnRestart from '../assets/restart-button.svg';
 import sprBtnRestartHover from '../assets/verde.png';
 import laser from '../assets/laser.png';
 import sprBg0 from '../assets/sprBg0.png';
-import scores from '../js/topScores';
-import scoresAPI from '../js/scoresAPI';
+import scores from './topScores';
+import scoresAPI from './scoresAPI';
 
 
 export default class SceneMain extends Phaser.Scene {
