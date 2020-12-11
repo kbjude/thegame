@@ -1,6 +1,9 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable func-names */
 import Phaser from 'phaser';
 
 
+// eslint-disable-next-line import/no-named-as-default
 import ScrollingBackground from './entities';
 import scoresAPI from '../js/scoresAPI';
 import scores from '../js/topScores';
@@ -10,6 +13,7 @@ export default class GameOver extends Phaser.Scene {
     super('End');
   }
 
+  // eslint-disable-next-line class-methods-use-this
   preload() {
   }
 

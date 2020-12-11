@@ -1,3 +1,6 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable radix */
 import Phaser from 'phaser';
 import '../style.css';
 import imageone from '../assets/NewGameButton.png';

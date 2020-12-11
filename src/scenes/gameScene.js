@@ -1,3 +1,7 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable no-plusplus */
+/* eslint-disable import/no-duplicates */
+/* eslint-disable import/no-named-as-default */
 import Phaser from 'phaser';
 import Player, { ChaserShip, GunShip } from './entities';
 import CarrierShip from './entities';

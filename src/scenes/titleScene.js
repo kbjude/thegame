@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable class-methods-use-this */
 import Phaser from 'phaser';
 import config from '../config/config';
 // eslint-disable-next-line import/no-named-as-default
@@ -28,7 +30,7 @@ export default class TitleScene extends Phaser.Scene {
 
     this.gameText = this.add.text(0, 0, 'Play', { fontSize: '32px', fill: '#fff' });
     this.centerButtonText(this.gameText, this.startButton);
-    this.startButton.on('pointerdown', (pointer) => {
+    this.startButton.on('pointerdown', () => {
       this.scene.start('Game');
     }, this);
 
@@ -76,7 +78,8 @@ export default class TitleScene extends Phaser.Scene {
   centerButton(gameObject, offset = 0) {
     Phaser.Display.Align.In.Center(
       gameObject,
-      this.add.zone(config.width / 2, config.height / 2 - offset * 100, config.width, config.height),
+      this.add.zone(config.width / 2, config.height / 2 - offset * 100, config.width, config
+        .height),
     );
   }
 
