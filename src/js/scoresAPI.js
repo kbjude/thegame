@@ -1,4 +1,3 @@
-
 import scores from './topScores';
 
 const scoresAPI = (() => {
