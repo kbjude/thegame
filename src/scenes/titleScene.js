@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import config from '../config/config';
+// eslint-disable-next-line import/no-named-as-default
 import ScrollingBackground from './entities';
 import topScores from '../js/topScores';
 
