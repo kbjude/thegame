@@ -1,7 +1,7 @@
 # Shooter Game
 This is a game built using Javascript, it has a player and the player's ability to protect herself is by using bullets, dodging the ememy in all ways, running from those chasing her and many other options. The player has one life, once any of the enemies' bullets, or any other item comes in to contact with the player, the game will End. 
 
-## Deploy
+## Setting Up Locally
 - To deploy this project locally, download or clone this repo.
 - Install the dependencies to build the project
     * npm install
@@ -16,7 +16,7 @@ This is a game built using Javascript, it has a player and the player's ability 
 
 ### Acquiring points:
   - When you dodge the Enemy your points will be increased
-  - Killing/destroy the enemy and any thing they have sent at you, will attract you more points.
+  - Killing/destroying the enemy and any thing they have sent at you, will attract you more points.
   
 ### Death
   - Every time the player or the eneamy is hit by a laser, they will die
@@ -26,7 +26,7 @@ This is a game built using Javascript, it has a player and the player's ability 
   Every time you acquire enought points to take you to the book of fame then you have won
   
     #### Book of fame.
-    The is a place where you score is compare against 4 more players, whoever wins will be on top of the others. Any of the players with a score that can keep them      in the book of fame have won.
+    The is a place where your score is compare against 4 more players, whoever wins will be on top of the others. Any of the players with a score that can keep them      in the book of fame have won.
     
     If you have not made it to the book of fame, you have lost.
     
@@ -57,7 +57,7 @@ This is a game built using Javascript, it has a player and the player's ability 
 - Phaser
 
 #### Live Version 
-   - [ Netlify Live Link](https://jude-restaurant.netlify.app/)
+   - [ Netlify Live Link](https://shooter-game-jude.netlify.app)
 
 ### Contributors
 
