@@ -7,7 +7,6 @@ import Phaser from 'phaser';
 import ScrollingBackground from './entities';
 import scoresAPI from './scoresAPI';
 import scores from './topScores';
-import topScores from './topScores';
 
 export default class GameOver extends Phaser.Scene {
   constructor() {
