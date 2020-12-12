@@ -7,6 +7,7 @@ import Phaser from 'phaser';
 import ScrollingBackground from './entities';
 import scoresAPI from './scoresAPI';
 import scores from './topScores';
+import topScores from './topScores';
 
 export default class GameOver extends Phaser.Scene {
   constructor() {
@@ -66,19 +67,32 @@ export default class GameOver extends Phaser.Scene {
       this.backgrounds.push(bg);
     }
 
-    this.userNameText = this.add.text(210, 310, `${scores.user.user}`, { fontSize: '16px', fill: '#FFF' });
-    this.finalScoreText = this.add.text(210, 330, `score: ${scores.user.score}`, { fontSize: '16px', fill: '#FFF' });
+    this.userNameText = this.add.text(210, 400, `${scores.user.user}`, { fontSize: '16px', fill: '#FFF' });
+    this.finalScoreText = this.add.text(210, 420, `score: ${scores.user.score}`, { fontSize: '16px', fill: '#FFF' });
+
     scoresAPI.gettop()
       .then(() => {
         if (scores.user.score >= scores.topscores[4].score) {
-          this.add.text(100, 390, 'Congrats, you are in top 4!', { fontSize: '16px', fill: '#FFF' });
+          this.add.text(100, 400, 'Congrats, you are in top 4!', { fontSize: '16px', fill: '#FFF' });
           this.sfx.life.play();
           scoresAPI.save();
         } else {
-          this.add.text(90, 390, 'Too low to be saved sorry!!!', { fontSize: '16px', fill: '#FFF' });
+          this.add.text(90, 450, 'Too low to be saved sorry!!!', { fontSize: '16px', fill: '#FFF' });
         }
       });
+    this.add.text(160, 200, '5 Highest Scores', { fontSize: '16px', fill: '#FFF' });
+
+    scoresAPI.gettop()
+      .then(() => {
+        let tab = 0;
+        scores.topscores.forEach(element => {
+          this.add.text(160, 260 + tab, `${tab / 24 + 1}.- ${element.user}: ${element.score}`, { fontSize: '16px', fill: '#FFF' });
+          tab += 24;
+        });
+      })
+      .catch(e => this.add.text(16, 300, e, { fontSize: '16px', fill: '#FFF' }));
   }
+
 
   update() {
     for (let i = 0; i < this.backgrounds.length; i++) {
