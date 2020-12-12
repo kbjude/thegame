@@ -18,7 +18,7 @@ global.fetch = jest.fn(() => Promise.resolve({
 }));
 describe('scoresAPI', () => {
   describe('gettop', () => {
-    let response = '';
+    // const response = '';
 
     test('it should fetch the right url', () => {
       expect(fetch.mock.calls[0][0]).toEqual(
