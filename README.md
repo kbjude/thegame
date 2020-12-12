@@ -32,6 +32,22 @@ This is a game built using Javascript, it has a player and the player's ability 
     
     If you have not made it to the book of fame, you have lost.
     
+ ### Enemies:
+     We have atleast three kinds of enemies
+     1. Chaser Ship
+     This will chase the player once it is in close proximity with her until it collides with them. The only way to kill it is by the player being under it and fire       bullets/lasers upwards. Running away from it is not an option, it is faster than the player but also will expose you to other enemies. You can however dodge         it by giving it enough distance so that it doesnt recorgnise your presence.
+     
+     2. Carrier Ship
+      Carrier ship will pop up unknowingly and will some times drop a bullet/laser or two. You need to watch out for it.
+      
+     3. Gunship
+      These are the commonest enemies on the board, they will come from any direction and will fire bullets/lasers at any time. They will kill the player in two           ways. 
+      - By firing lasers at the player.
+      - Them actually colliding with the player. Once any of this happens the player will die.
+      
+      I will also talk about the enemy lasers which may not trigger any motion by them selves but by the 2 ships(Gunship and carrier ship). They are also a danger         to the player. When they are fired and they collide with the player. She will die.
+      
+      
  ### Playing the Game.
   - After starting the Game. The following keyboard buttons will do the following:
       SPACE: 
