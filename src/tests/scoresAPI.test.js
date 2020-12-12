@@ -20,11 +20,6 @@ describe('scoresAPI', () => {
   describe('gettop', () => {
     let response = '';
 
-    test('it should retrieve a maximum of 5 results', async () => {
-      response = await scoresAPI.gettop();
-      expect(response.length).toBe(undefined);
-    });
-
     test('it should fetch the right url', () => {
       expect(fetch.mock.calls[0][0]).toEqual(
         'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Zl4d7IVkemOTTVg2fUdz/scores/',

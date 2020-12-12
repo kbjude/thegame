@@ -14,7 +14,8 @@ import sndBtnDown from '../assets/rmusic.wav';
 import explosionSomewhere from '../assets/explosion_somewhere_far.mp3';
 import normal from '../assets/normal_3.png';
 import sprBg1 from '../assets/sprBg1.jpg';
-import restart from '../assets/restart-button.svg';
+
+import restart from '../assets/restart.png';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
