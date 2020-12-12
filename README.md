@@ -1,4 +1,6 @@
 # Shooter Game
+![Screenshot](https://github.com/kbjude/thegame/blob/ft-shooter/src/assets/Screenshot%202020-12-12%20at%2018.43.18.png)
+
 This is a game built using Javascript, it has a player and the player's ability to protect herself is by using bullets, dodging the ememy in all ways, running from those chasing her and many other options. The player has one life, once any of the enemies' bullets, or any other item comes in to contact with the player, the game will End. 
 
 ## Setting Up Locally
