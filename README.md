@@ -33,7 +33,7 @@ This is a game built using Javascript, it has a player and the player's ability 
  ### Playing the Game.
   - After starting the Game. The following keyboard buttons will do the following:
       SPACE: 
-      This will be your shooting button. For rapid fire, hold it down with a long press, for a one at a time bullet realease, press and realease the button as many times as you want the bullet to be realesed.
+      This will be your shooting button. For rapid fire, hold it down with a long press, for a one at a time bullet release, press and release the button as many times as you want the bullet to be relesed.
       
       ARROW KEY LEFT:
       This will help the player move left with ease
